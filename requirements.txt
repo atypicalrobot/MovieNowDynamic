@@ -1,6 +1,20 @@
+# Change database easily using environment variables.
 dj-database-url==0.4.1
+
+# Python web framework for perfectionists with deadlines.
 Django==1.9.6
+
+# REST API Toolkit for Django
 djangorestframework==3.3.3
+
+# Provide useful helpers like graph_models to view ERD.
+django_extensions==1.6.7
+
+# Fast application server to run our code!
 gunicorn==19.6
+
+# Handles connection to postgres database using fast C library.
 psycopg2==2.6.1
+
+# Handles static assets.
 whitenoise==3.1
