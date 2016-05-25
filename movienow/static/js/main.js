@@ -1,5 +1,9 @@
-var source   = $('#entry-template').html();  // load the template from index.html
-var template = Handlebars.compile(source);   // compile the template in js
+var movieSource   = $('#entry-template').html();  // load the template from index.html
+var movieTemplate = Handlebars.compile(movieSource);   // compile the template in js
+
+var userSource   = $('#user-template').html();  // load the template from index.html
+var userTemplate = Handlebars.compile(userSource);   // compile the template in js
+
 var api_key = "0bc1e253597b90a61225cfa0988842d9"  // store api key as a variable
 var genres = []  // 
 
@@ -16,7 +20,17 @@ function displayMovies(movies, callerfunc){  // create function to display movie
             context.genre_names[j] = genres[context.genre_ids[j]].name;
         }
 
-        var html    = template(context);  // generate html by passing context to the compiled template
+        var html    = movieTemplate(context);  // generate html by passing context to the compiled template
+        document.getElementById("mainBody").innerHTML += html;  // add the generated html to the page
+    }
+    console.log(context);  // display JSON in console
+}
+
+function displayUsers(users){  // create function to display users using above compiled template
+    for(var i = 0; i < users.length; i++) {
+        var context = users[i]  // set context for template to current users
+        
+        var html    = userTemplate(context);  // generate html by passing context to the compiled template
         document.getElementById("mainBody").innerHTML += html;  // add the generated html to the page
     }
     console.log(context);  // display JSON in console
@@ -25,6 +39,14 @@ function displayMovies(movies, callerfunc){  // create function to display movie
 $(document).ready(function() {  // wait for all DOM elements to load
     getGenres();  // load genres
 });
+
+function getUsers() {  // function that displays genres of the movies
+    document.getElementById("mainBody").innerHTML = "<h2> Users </h2>";  // initial html for users page
+    $.getJSON("/api/users", function(json) {  // make the API request
+        console.log(json[0])  // display the genres in console as 
+        displayUsers(json);
+    });
+}
 
 function getGenres() {  // function that displays genres of the movies
     $.getJSON("http://api.themoviedb.org/3/genre/movie/list?api_key=" + api_key, function(json) {  // make the API request

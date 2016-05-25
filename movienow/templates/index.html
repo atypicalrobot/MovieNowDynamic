@@ -33,6 +33,7 @@
                 <li><a href="#" onclick="getLatest();">Now Playing</a></li>
                 <li><a href="#" onclick="Popular();">Popular Films</a></li>
                 <li><a href="#" onclick="Upcoming();">Upcoming Films</a></li>
+                <li><a href="#" onclick="getUsers();">Users</a></li>
               </ul>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
@@ -83,6 +84,16 @@
                 </div>
               </div>
             </script>
+
+            <script id="user-template" type="text/x-handlebars-template">
+                <h3>
+                      &nbsp;&nbsp;{{username}}
+                      {{#if is_staff}} is a [staff] member {{/if}}
+                      
+                </h3>
+            </script>
+
+
         {% endverbatim %}
 
 

@@ -46,7 +46,7 @@ h4 {
 }
 
 
-h3{
+h3{    /* genres text */
     padding-right: 40px;
     padding-top: 20px;
     font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
@@ -57,7 +57,7 @@ h3{
     line-height: 26.4px;
 }
 
-h2{
+h2{   /* page text */
     padding-left: 40%;
     font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
     font-size: 33px;
@@ -67,10 +67,10 @@ h2{
     line-height: 26.4px;
 }
 
-h1 {
+h1 {  /* page text */
     padding-left: 40px;
     font-family: Baskerville, 'Baskerville Old Face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
-    font-size: 24px;
+    font-size: 34px;
     font-style: normal;
     font-variant: normal;
     font-weight: 500;
