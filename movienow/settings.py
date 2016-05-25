@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django_extensions',
     'rest_framework',
     'movienow.users',
+    'movienow.recommendations'
 )
 
 MIDDLEWARE_CLASSES = (
